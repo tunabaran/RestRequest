@@ -409,7 +409,7 @@ public static PostExecuteInterceptor postExecuteInterceptor = null;
 
 ### CONTACT AND CONTRIBUTING
 
-You fork this repository and contribute back using pull requests.
+You may fork this repository and contribute back using pull requests.
 
 Any contributions, features, bug fixes, are welcomed and appreciated but will be reviewed and discussed.
 
