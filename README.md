@@ -2,7 +2,9 @@
 
 Android easy RestRequest library.
 
-RestRequest is a wrapper library that uses android standart HttpRequest components to make JSON Rest Calls. RestRequest is aimed on achieving easy implementation, reuseable request objects, instinctive configuration options. You can use RestRequest to create fast request on anywhere in code base or define requests of your application, configure accordingly and reuse.
+RestRequest is a wrapper library that uses android standart HttpRequest components to make JSON Rest Calls. RestRequest is aimed on achieving easy implementation, reuseable request objects, instinctive configuration options. 
+
+You can use RestRequest to create fast request on anywhere in code base or define requests of your application, configure accordingly and reuse.
 
 ## INSTALLATION
 
@@ -48,7 +50,9 @@ restRequest.exchange(request, RequestType.POST, Response.class);
 
 ## GETTING STARTED
 
-RestRequest library is based on RestRequest class. In order to make a request you need to create an object instance of RestRequest and provide an url. Then to perform request call exchange method which requires request object, Request type, and Response Class. RestRequest class transforms request object to json makes request and takes response json transforms it to Response Class instance then returns in OnRequestSuccessCallback method. If you expect a response payload then you must use 
+RestRequest library is based on RestRequest class. In order to make a request you need to create an object instance of RestRequest and provide an url. Then to perform request, call exchange method which requires; request object, Request type, and Response Class.
+
+RestRequest class transforms request object to json, makes request and takes response json, transforms it to Response Class instance then returns in OnRequestSuccessCallback method. If you expect a response payload then you must use 
 setOnRequestSuccessCallback() method and catch request success event.
 
 ### Constructor
@@ -62,7 +66,7 @@ public RestRequest(String requestUrl);
 
 ```
 
-requestUrl is a required parameter to make http requests. You need to provide an url including "http://" or "https://" part of it.
+**requestUrl** is a required parameter to make http requests. You need to provide an url including "http://" or "https://" part of it.
 
 Second constructor is;
 
@@ -92,13 +96,13 @@ RestRequestCallback parameter is primary way to handle request callbacks.
 
 RestRequest has a constructor that takes RestRequestCallback as parameter. This interface contains four methods;
 
-**onSuccess** method is called when request is successfully completed. Provides ApiResponse object as method parameters. ApiResponse object contains getData method to provide response payload. Which may be null depends on target source.
+**onSuccess** method is called when request is successfully completed. Provides ApiResponse object as method parameter. ApiResponse object contains getData method to provide response payload. Which may be null depends on target source.
 
 **onFailed** method is called when request is failed. 
 
-**onRetry** method is called when request is retrying. Contains an integer variable corresponds to remaining retry count. RestRequest class can make requests after if fails this option will be explained later.
+**onRetry** method is called when request is retrying. Contains an integer variable corresponds to remaining retry count. RestRequest class can make requests after failed. This option will be explained later.
 
-**onCancel** method is called when RestRequestTask is cancelled. This event may be called by AsyncTaskQueue this will be explained later.
+**onCancel** method is called when RestRequestTask is cancelled. This event may be called by AsyncTaskQueue. This will be explained later.
 
 ```
 
@@ -126,7 +130,7 @@ RestRequest has a constructor that takes RestRequestCallback as parameter. This 
 
 ```
 
-If you dont want to give all 4 callback methods directly on constructor. You can also use seperated methods register these callbacks.
+If you dont want to give all 4 callback methods directly on constructor. You can also use seperated methods to register callbacks.
 
 These callback interface method parameters are same as RestRequestCallback method parameters.
 
@@ -164,9 +168,11 @@ restRequest.setOnRequestCancelCallback(new OnRequestCancelCallback() {
 
 ```
 
-## EXECUTE
+## EXCHANGE
 
-Execute is the key method of RestRequest class. Takes three parameters RequestType, RequestPayload and Response Class.
+Exchange is the key method of RestRequest class. Takes three parameters RequestType, RequestPayload and Response Class.
+
+You can call exchange method more than once.
 
 **RequestType :** Supports GET and POST requests. You can Select using **RequestType.GET** or **RequestType.POST**.
 
