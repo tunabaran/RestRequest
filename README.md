@@ -198,6 +198,7 @@ RestRequest class returns ApiResponse object at OnRequestSuccessCallback onSucce
 ApiResponse contains two properties.
 
 **Object data :** This property contains response payload object. This may be null.
+
 **ResponseStatus :** This property show response current state. May be RAW, READY, SENT.
 
 
@@ -407,10 +408,26 @@ public static PostExecuteInterceptor postExecuteInterceptor = null;
 
 ```
 
-### CONTACT AND CONTRIBUTING
+## CONTACT AND CONTRIBUTING
 
 You may fork this repository and contribute back using pull requests.
 
 Any contributions, features, bug fixes, are welcomed and appreciated but will be reviewed and discussed.
 
 If you have question or need help send an email at "tunaurut@gmail.com"
+
+## License
+
+Copyright (C) 2018
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
