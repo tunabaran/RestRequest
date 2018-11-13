@@ -143,7 +143,12 @@ public class RestRequest {
                             }
                         }
 
-                        T data = objectMapper.readValue(respJson, responseType);
+                        T data = null;
+                        if(responseType.getSimpleName().equals(String.class.getSimpleName())){
+                            data = (T) respJson;
+                        }else {
+                            data = objectMapper.readValue(respJson, responseType);
+                        }
                         apiResponse.setData(data);
                         apiResponse.setResponseStatus(ResponseStatus.SUCCESS);
                     } catch (InterruptedIOException e){
